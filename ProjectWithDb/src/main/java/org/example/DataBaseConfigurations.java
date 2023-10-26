@@ -14,7 +14,7 @@ public class DataBaseConfigurations {
 
     public static Properties loadProperties() throws IOException {
         Properties properties = new Properties();
-        properties.load(new FileInputStream("C:\\DEV\\CSD_LAB\\ContemporarySoftware_LAB2\\ProjectWithDb\\src\\main\\java\\org\\example\\config.properties"));
+        properties.load(new FileInputStream("src/main/java/org/example/config.properties"));
         return properties;
     }
 
