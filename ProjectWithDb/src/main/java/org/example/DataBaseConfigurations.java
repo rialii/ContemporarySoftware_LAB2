@@ -46,6 +46,7 @@ public class DataBaseConfigurations {
     }
 
     public static boolean searchForDocument(Document queryDocument) throws IOException {
+        boolean anyDocumentFound = false;
         try {
             MongoCollection<Document> collection = returnMongoClient().getDatabase(DATABASE_NAME).getCollection(COLLECTION_NAME);
             FindIterable<Document> results = collection.find(queryDocument);
@@ -53,8 +54,9 @@ public class DataBaseConfigurations {
                 while (cursor.hasNext()) {
                     Document resultDocument = cursor.next();
                     System.out.println("Match found: " + resultDocument.toJson());
+                    anyDocumentFound = true;
                 }
-                return true;
+                return anyDocumentFound;
             } catch (MongoException mongoException) {
                 System.err.println("Failed to search for documents: " + mongoException.getMessage());
                 return false;

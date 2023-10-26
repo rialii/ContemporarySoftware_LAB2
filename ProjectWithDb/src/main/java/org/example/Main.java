@@ -14,7 +14,6 @@ public class Main {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Insert (1) or search (2)");
             int command = scanner.nextInt();
-
             if (command == 1) {
                 System.out.println("Insert the word");
                 String word = scanner.next();
