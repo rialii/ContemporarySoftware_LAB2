@@ -1,5 +1,4 @@
 package org.example;
-
 import com.mongodb.MongoException;
 import com.mongodb.client.*;
 import org.bson.Document;
