@@ -1,6 +1,8 @@
 name: Code Coverage
 
 on:
+  push:
+    branches: [ main ]
   pull_request:
     types:
       - synchronize
@@ -17,11 +19,12 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '11'
+        distribution: 'adopt'
 
     - name: Run Code Coverage Extractor
       run: |
-        javac CodeCoverageExtractor.java
-        java CodeCoverageExtractor
+        javac CodeCoverageExtraction.java
+        java CodeCoverageExtraction
       env:
         JVM_OPTS: "-Xmx1g"  # Adjust JVM options as needed
 
