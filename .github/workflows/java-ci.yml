@@ -16,10 +16,6 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file ProjectWithDb/pom.xml
-    - name: compile
-      run: |
-        javac ProjectWithDb/src/main/java/org/example/Main.java
-        java Main
     - name: run tests
       run: |
         javac ProjectWithDb/src/test/java/dbTests.java
