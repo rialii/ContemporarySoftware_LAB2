@@ -1,0 +1,40 @@
+name: Code Coverage
+
+on:
+  pull_request:
+    types:
+      - synchronize
+
+jobs:
+  code-coverage:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Java
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'
+
+    - name: Run Code Coverage Extractor
+      run: |
+        javac CodeCoverageExtractor.java
+        java CodeCoverageExtractor
+      env:
+        JVM_OPTS: "-Xmx1g"  # Adjust JVM options as needed
+
+    - name: Post Code Coverage as Comment
+      uses: actions/github-script@v6
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const fs = require('fs');
+          const coverageData = fs.readFileSync('path/to/jacoco.xml', 'utf8');
+          github.issues.createComment({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: context.issue.number,
+            body: `Code Coverage Report:\n\`\`\`${coverageData}\`\`\``
+          });
