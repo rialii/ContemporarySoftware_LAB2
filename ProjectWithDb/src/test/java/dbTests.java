@@ -26,13 +26,12 @@ public class dbTests {
         assertFalse(DataBaseConfigurations.searchForDocument(document));
     }
 
-    /*
     @Test
     public void failingTestOnPurpose() throws IOException {
         Document doc = new Document("name", "IAmNotInDb");
         assertTrue(DataBaseConfigurations.searchForDocument(doc));
     }
-    * */
+
 
 
 
