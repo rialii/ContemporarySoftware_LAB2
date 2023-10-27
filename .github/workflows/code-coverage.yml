@@ -23,8 +23,8 @@ jobs:
 
     - name: Run Code Coverage Extractor
       run: |
-        javac CodeCoverageExtractor.java
-        java CodeCoverageExtractor
+        javac CodeCoverageExtraction.java
+        java CodeCoverageExtraction
       env:
         JVM_OPTS: "-Xmx1g"  # Adjust JVM options as needed
 
