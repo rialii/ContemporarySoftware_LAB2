@@ -3,7 +3,6 @@ import org.bson.Document;
 import org.example.DataBaseConfigurations;
 import org.junit.Test;
 
-import javax.xml.crypto.Data;
 import java.io.IOException;
 
 import static org.junit.Assert.*;

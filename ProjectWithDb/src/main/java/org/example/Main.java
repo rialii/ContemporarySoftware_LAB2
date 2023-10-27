@@ -6,7 +6,6 @@ import org.bson.Document;
 import javax.xml.crypto.Data;
 import java.util.Properties;
 import java.util.Scanner;
-import java.io.FileInputStream;
 import java.io.IOException;
 
 public class Main {
