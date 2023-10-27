@@ -1,10 +1,7 @@
 package org.example;
 
-import com.mongodb.client.*;
 import org.bson.Document;
 
-import javax.xml.crypto.Data;
-import java.util.Properties;
 import java.util.Scanner;
 import java.io.IOException;
 
